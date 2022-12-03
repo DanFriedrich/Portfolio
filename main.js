@@ -53,11 +53,11 @@ function addStars(){
 Array(200).fill().forEach(addStars)
 
 //Space
-const SpaceTexture = new THREE.TextureLoader().load('Space.jpg');
+const SpaceTexture = new THREE.TextureLoader().load('img/Space.jpg');
 scene.background = SpaceTexture;
 
 //Cube
-const CubeTexture = new THREE.TextureLoader().load('Daniel3x4.jpg');
+const CubeTexture = new THREE.TextureLoader().load('img/Daniel3x4.jpg');
 const Cube = new THREE.Mesh(
   new THREE.BoxGeometry(3, 4, 3),
   new THREE.MeshBasicMaterial({ map: CubeTexture})
@@ -69,8 +69,8 @@ Cube.position.setX(-10);
 
 
 //Earth
-const EarthTexture = new THREE.TextureLoader().load('Earth.jpg');
-const EarthNormalTexture = new THREE.TextureLoader().load('EarthNormal.jpeg')
+const EarthTexture = new THREE.TextureLoader().load('img/Earth.jpg');
+const EarthNormalTexture = new THREE.TextureLoader().load('img/EarthNormal.jpeg')
 const Earth = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({ 
