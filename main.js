@@ -61,7 +61,7 @@ const SpaceTexture = new THREE.TextureLoader().load(Space);
 scene.background = SpaceTexture;
 
 //Cube
-const CubeTexture = new THREE.TextureLoader().load(Daniel);
+/*const CubeTexture = new THREE.TextureLoader().load(Daniel);
 const Cube = new THREE.Mesh(
   new THREE.BoxGeometry(3, 4, 3),
   new THREE.MeshBasicMaterial({ map: CubeTexture})
@@ -70,7 +70,7 @@ scene.add(Cube)
 
 Cube.position.z = -10;
 Cube.position.setX(-10);
-
+*/
 
 //Earth
 const EarthTexture = new THREE.TextureLoader().load(EarthTex);
