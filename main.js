@@ -1,6 +1,10 @@
 import './style.css'
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import Daniel from './Daniel3x4.jpg';
+import EarthTex from './Earth.jpg';
+import EarthNormal from './EarthNormal.jpeg';
+import Space from './Space.jpg';
 
 
 const scene = new THREE.Scene();
