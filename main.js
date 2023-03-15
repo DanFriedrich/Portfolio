@@ -21,11 +21,34 @@ camera.position.setZ(30);
 
 renderer.render(scene, camera);
 
-//Torus
-const geometry = new THREE.TorusGeometry( 10, 1, 16, 100);
-const material = new THREE.MeshPhongMaterial({color: 0xFF6347});
-const torus = new THREE.Mesh(geometry, material);
-scene.add(torus)
+//Star
+const shape = new THREE.Shape();
+        const outerRadius = 0.8;
+        const innerRadius = 0.4;
+        const PI2 = Math.PI*2;
+        const inc = PI2/10;
+
+        shape.moveTo(outerRadius, 0);
+        let inner = true;
+
+        for(let theta = inc; theta<PI2; theta+=inc){
+            const radius = (inner) ? innerRadius : outerRadius;
+            shape.lineTo(Math.cos(theta)*radius, Math.sin(theta)*radius);
+            inner = !inner;
+        }
+
+        const extrudeSettings = {
+            steps: 1,
+            depth: 1,
+            bevelEnabled: false
+        }
+
+        const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+
+        const material = new THREE.MeshStandardMaterial( { color: 0x0E1b68 });
+
+        const star = new THREE.Mesh( geometry, material );
+        scene.add(star);
 
 //pointLight
 const pointLight = new THREE.PointLight(0xffffff)
@@ -104,9 +127,8 @@ document.body.onscroll = moveCamera
 function animate(){
   requestAnimationFrame(animate);
 
-  torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
-  torus.rotation.x += 0.01;
+  star.rotation.z += 0.01;
+  star.rotation.y += 0.01;
 
   controls.update();
 
