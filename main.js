@@ -23,8 +23,8 @@ renderer.render(scene, camera);
 
 //Star
 const shape = new THREE.Shape();
-        const outerRadius = 0.8;
-        const innerRadius = 0.4;
+        const outerRadius = 2;
+        const innerRadius = 1;
         const PI2 = Math.PI*2;
         const inc = PI2/10;
 
@@ -48,6 +48,9 @@ const shape = new THREE.Shape();
         const material = new THREE.MeshStandardMaterial( { color: 0x0E1b68 });
 
         const star = new THREE.Mesh( geometry, material );
+
+        star.position.z = -8;
+        star.position.y = 4;
         scene.add(star);
 
 //pointLight
@@ -115,7 +118,7 @@ function moveCamera(){
 
   Earth.rotation.y += 0.02;
 
-  Cube.rotation.y += 0.01;
+  Cube.rotation.y += 0.03;
   //Cube.rotation.z += 0.01;
 
   camera.position.x = t * -0.01;
